@@ -157,3 +157,30 @@ console.log(isChecked && isClose);
 //console.log(isChecked || isClose);
 // Пример на оператора отрицания (!)
 //console.log(isChecked || !isClose);
+
+/********************************* Практическое задание***************************************************************/
+
+let money,
+    time;
+
+money = prompt("Ваш бюджет на месяц?", "");
+time = prompt("Введите дату в формате ГГГГ-ММ-ДД");
+
+const answer1 = prompt("Введите обязательную статью расходов в этом месяце"),
+    answer2 = prompt("Во сколько обойдеться"),
+    answer3 = prompt("Введите обязательную статью расходов в этом месяце"),
+    answer4 = prompt("Во сколько обойдеться");
+
+let appData = {
+    property: money,
+    timeDara: time,
+    expenses: {},
+    optionalExpenses: {},
+    income: [],
+    savings: false
+};
+
+appData.expenses.answer1 = answer2;
+appData.expenses.answer3 = answer4;
+
+alert( appData.property/30);
