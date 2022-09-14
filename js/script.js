@@ -326,3 +326,99 @@ for(i ; i < 20; i ++) {
 };
 */
 
+/******************************************Функций******************************/
+
+//Пример простой функций стандарт ES5 и ниже
+/*
+function showMessage (text) {
+    alert(text);  
+};
+showMessage('HelloWorld');
+*/
+// Пример с замыканиям функция и его обьектами
+// Пример локальной переменной и вызовам его в глобальной среде
+/*
+function zamykaniya (text) {
+    let num = 20;
+};
+zamykaniya();
+console.log(num);
+*/
+// пример если глобальная и локальная переменные равны по названию но вызовов происходящий в глобальной среде
+/*
+let num = 10;
+function zamykaniya (text) {
+    let num = 20;
+};
+zamykaniya();
+console.log(num);
+*/
+// пример если глобальная и локальная переменные равны по названию но вызовов происходящий в глобальной и локальной среде
+/*
+let num = 10;
+function zamykaniya (text) {
+    let num = 20;
+    console.log(num);
+};
+zamykaniya();
+console.log(num);
+*/
+
+// пример со сложением строк в функций 'return'
+/*
+function calc (a,b) {
+    return (a+b);
+};
+
+console.log(calc(4,9));
+
+function retVar() {
+    let num = 50;
+    return num;
+};
+let anotherVar = retVar();
+console.log(anotherVar);
+*/
+// пример decloration function
+/*
+console.log(calc(4,9));
+
+function calc (a,b) {
+    return (a+b);
+};
+
+console.log(calc(5,1));
+*/
+//пример function expression (анонимные функций) 
+/*
+let calc = function (a,b) {
+    return (a+b);
+};
+console.log(calc(4,9));
+*/
+// пример стрелочная фунция
+/*
+let calc = (a,b) => a+b;
+console.log(calc(4,9));
+*/
+
+// пример методы и свойства
+
+// пример свойства (length)
+/*
+let str = 'text';
+console.log(str.length);
+*/
+// пример метода (toUpperCase, toLowerCase, Math.round(свойства), parseInt, parseFloat)
+/*
+let str = 'Text';
+console.log(str.toUpperCase());
+console.log(str.toLowerCase());
+
+let twelve = "12.2";
+console.log(Math.round(twelve));
+
+let num = '12.2px';
+console.log(parseInt(num));
+console.log(parseFloat(num));
+*/
