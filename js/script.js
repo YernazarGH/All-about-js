@@ -163,28 +163,81 @@ console.log(isChecked && isClose);
 let money,
     time;
 
-money = prompt("Ваш бюджет на месяц?", "");
+money = +prompt("Ваш бюджет на месяц?", "");
 time = prompt("Введите дату в формате ГГГГ-ММ-ДД");
 
-const answer1 = prompt("Введите обязательную статью расходов в этом месяце"),
-    answer2 = prompt("Во сколько обойдеться"),
-    answer3 = prompt("Введите обязательную статью расходов в этом месяце"),
-    answer4 = prompt("Во сколько обойдеться");
-
 let appData = {
-    property: money,
-    timeDara: time,
+    budget: money,
+    timeData: time,
     expenses: {},
     optionalExpenses: {},
     income: [],
     savings: false
 };
-
-appData.expenses.answer1 = answer2;
-appData.expenses.answer3 = answer4;
-
-alert( appData.property/30);
 */
+// пример с циклом for
+/*
+for (let i = 0; i < 2; i++) {
+    let a = prompt("Введите обязательную статью расходов в этом месяце"),
+        b = prompt("Во сколько обойдеться");
+    
+    if ( (typeof(a)) === 'string' && (typeof(a)) != null && (typeof(b)) != null && a != '' && b  && a.length <50 ) {
+        console.log('done');
+        appData.expenses[a] = b;
+    } else {
+        i--;
+    };
+};
+*/
+// пример с while
+/*
+let i = 0;
+while (i < 2 ) {
+    i++;
+    let a = prompt("Введите обязательную статью расходов в этом месяце"),
+        b = prompt("Во сколько обойдеться");
+    
+    if ( (typeof(a)) === 'string' && (typeof(a)) != null && (typeof(b)) != null && a != '' && b  && a.length <50 ) {
+        console.log('done');
+        appData.expenses[a] = b;
+    } else {
+        i--;
+    };
+}
+*/
+
+// пример с do while
+/*
+let i = 0;
+do {
+    i++;
+    let a = prompt("Введите обязательную статью расходов в этом месяце"),
+        b = prompt("Во сколько обойдеться");
+    
+    if ( (typeof(a)) === 'string' && (typeof(a)) != null && (typeof(b)) != null && a != '' && b  && a.length <50 ) {
+        console.log('done');
+        appData.expenses[a] = b;
+    } else {
+        i--;
+    };
+} while (i < 2);
+
+
+appData.moneyPerDay = appData.budget / 30;
+
+alert('Ежедневный бюджет: ' + appData.moneyPerDay);
+
+if (appData.moneyPerDay < 200) {
+    console.log('Минимальный уровень достатка');
+} else if (appData.moneyPerDay > 200 && appData.moneyPerDay < 3000) {
+    console.log('Средний уровень достатка');
+} else if (appData.moneyPerDay > 3000) {
+    console.log('Высокий уровень достатка');
+} else {
+    console.log('Произошла ошибка');
+};
+console.log(appData);
+
 
 
 /********************************************Условия*************************************************************/
@@ -264,10 +317,12 @@ for(let i = 15; i < 20; i ++) {
 */
 // пример чтобы цикл пропустил шаг
 /*
-for(let i = 15; i < 20; i ++) {
+let i = 15;
+for(i ; i < 20; i ++) {
     if ( i == 17) {
         continue;
     };
     console.log(i);
 };
 */
+
