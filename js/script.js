@@ -1,5 +1,5 @@
 // Оператор обозначения что мы пишем наш JS в формате ES6
-//"use strict";
+"use strict";
 // ************* Функций в JS с модальными окнами ***********************
 
 //  Модальная окно с своим выбором ответа
@@ -548,3 +548,61 @@ function done(){
 learLang('JavaScript', done);
 */
 
+/******************обьекты подробнее****************************/
+// другой пример по созданию обьекта
+/*
+let obg = new Object();
+console.log(obg);
+*/
+//Добавление свойства обьекта
+/*
+let options = {
+    width: 1024,
+    height: 1024,
+    name: 'test'
+};
+console.log(options);
+options.bool = false;
+options.colors = {
+    border: 'black',
+    bg: 'red'
+};
+console.log(options);
+*/
+// пример удаление свойства обьекта
+/*
+let options = {
+    width: 1024,
+    height: 1024,
+    name: 'test',
+    bool: false,
+    colors: {
+        border: 'black',
+        bg: 'red'
+    }
+};
+
+delete options.bool;
+console.log(options);
+*/
+
+// работа со свойствами больших обьектов 
+/*
+let options = {
+    width: 1024,
+    height: 1024,
+    name: 'test',
+    bool: false,
+    colors: {
+        border: 'black',
+        bg: 'red'
+    }
+};
+
+for(let key in options) {
+    console.log('свойства ' + key + 'имеет значение ' + options[key]);
+
+};
+// сколько обьектов в свойстве colors
+console.log(Object.keys(options.colors).length);
+*/
