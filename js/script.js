@@ -424,11 +424,11 @@ console.log(parseFloat(num));
 */
 
 /****************************************************************Практическая задания с функцией*************************************************************/
-
+/*
 let money,
     time;
-/*
-function start(){
+
+function start(){                           // Функция для получения данных от пользователя
     money = +prompt("Ваш бюджет на месяц?", "");
     time = prompt("Введите дату в формате ГГГГ-ММ-ДД");
 
@@ -439,41 +439,41 @@ function start(){
 
 };
 start();
-*/
-let appData = {
+
+let appData = {                     // основной обьект где храняться данные пользователя
     budget: money,
     timeData: time,
     expenses: {},
     optionalExpenses: {},
     income: [],
-    savings: false
+    savings: true
 };
 
-// пример с циклом for
-/*
-function chooseExpenses (){
+
+
+function chooseExpenses (){                                 //фукнцция расчета затрат по указанным пользователем данными
     for (let i = 0; i < 2; i++) {
         let a = prompt("Введите обязательную статью расходов в этом месяце"),
             b = prompt("Во сколько обойдеться");
         
         if ( (typeof(a)) === 'string' && (typeof(a)) != null && (typeof(b)) != null && a != '' && b  && a.length <50 ) {
-            console.log('done');
             appData.expenses[a] = b;
         } else {
             i--;
         };
+        
     };
 };
 chooseExpenses();
 
-function detectDayBudget(){
+function detectDayBudget(){                 // Расчет дневного бюджета
     appData.moneyPerDay = (appData.budget / 30).toFixed();
-    alert('Ежедневный бюджет: ' + appData.moneyPerDay);
+    alert('Ежедневный бюджет: ' + appData.moneyPerDay + 'тг.');
     return +appData.moneyPerDay;
 };
 detectDayBudget();
 
-function detectLevel() {
+function detectLevel() {                    // Расчет уровня достатка
     if (appData.moneyPerDay < 200) {
         console.log('Минимальный уровень достатка');
     } else if (appData.moneyPerDay > 200 && appData.moneyPerDay < 3000) {
@@ -486,7 +486,7 @@ function detectLevel() {
 };
 detectLevel();
 
-function checkSaving(){
+function checkSaving(){                     // функция для определения доход в месяц с счета с депазита если значения обьекта 'savings'= true
     if(appData.savings == true) {
         let save = +prompt('Какова сумма накоплений?', ''),
             percent = +prompt('Под какой процент?', '');
@@ -495,8 +495,8 @@ function checkSaving(){
     };
 };
 checkSaving();
-*/
-function chooseOptExpenses() {
+
+function chooseOptExpenses() {                  // Функция для определения необязательных расходов
     
     for (let i = 1; i < 4 ; i++ ) {
         let a = prompt('Статья необязательных расходов?', '');
@@ -506,37 +506,45 @@ function chooseOptExpenses() {
 chooseOptExpenses();
 
 console.log(appData);
-// пример с while
-/*
-let i = 0;
-while (i < 2 ) {
-    i++;
-    let a = prompt("Введите обязательную статью расходов в этом месяце"),
-        b = prompt("Во сколько обойдеться");
-    
-    if ( (typeof(a)) === 'string' && (typeof(a)) != null && (typeof(b)) != null && a != '' && b  && a.length <50 ) {
-        console.log('done');
-        appData.expenses[a] = b;
-    } else {
-        i--;
-    };
-}
 */
-
-// пример с do while
+/*************************************************callback функций******************************/
+//пример не используя действия callback
 /*
-let i = 0;
-do {
-    i++;
-    let a = prompt("Введите обязательную статью расходов в этом месяце"),
-        b = prompt("Во сколько обойдеться");
-    
-    if ( (typeof(a)) === 'string' && (typeof(a)) != null && (typeof(b)) != null && a != '' && b  && a.length <50 ) {
-        console.log('done');
-        appData.expenses[a] = b;
-    } else {
-        i--;
-    };
-} while (i < 2);
+function first () {
+    //что то делаем (действия чтобы наш код был больше второго и весил чуть больше чем второй)
+    setTimeout(function() {
+        console.log(1);
+    },500);
+};
+
+function second () {
+    console.log(2);
+};
+
+first();
+second();
+*/
+// Пример с действием callback
+// пример с одной ф-ей
+/*
+function learLang(lang,callback) {
+    console.log('Я учу '+ lang);
+    callback();
+};
+learLang('JavaScript', function(){
+    console.log('Я прошел 3и урок');
+});
+*/
+// Пример с 2я ф-ями
+/*
+function learLang(lang,callback) {
+    console.log('Я учу '+ lang);
+    callback();
+};
+
+function done(){
+    console.log('Я прошел 3и урок');
+};
+learLang('JavaScript', done);
 */
 
