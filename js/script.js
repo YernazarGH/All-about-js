@@ -606,3 +606,56 @@ for(let key in options) {
 // сколько обьектов в свойстве colors
 console.log(Object.keys(options.colors).length);
 */
+
+/*************************************************Массивы и псевдомассивы******************************************/
+
+// пример по созданию массива
+//let arr = [1,2,3,4,5];
+// удаления последнего значения в массиве
+/*
+arr.pop();
+console.log(arr);
+*/
+// добавления последним значения в массив
+/*
+arr.push(6);
+console.log(arr);
+*/
+//удаления первого значения в массиве
+/*
+arr.shift();
+console.log(arr);
+*/
+//добавления первым значением в массив
+/*
+arr.unshift(0);
+console.log(arr);
+*/
+//переобразования массивов с методами for, forEach, for of(in), split, join, sort
+/*
+for(let i = 0; i < arr.length; i++) {           //переобразования с for
+    console.log(arr[i]);
+};
+*/
+/*
+arr.forEach( function(item, i, mass) {          //переобразования с forEach
+    console.log(i + ':' + item + '(массив: ' + mass + ')');
+});
+*/
+/*
+let mass = [1,3,5,7];
+
+for(let key of mass) {                      //переобразования с for of
+    console.log(key);
+};
+
+for(let key in mass) {                      //переобразования с for in
+    console.log(key);
+};
+*/
+
+let ans = prompt('',''),
+    arr = [];
+
+arr = ans.split(',');
+console.log(arr);
