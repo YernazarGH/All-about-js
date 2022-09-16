@@ -653,9 +653,43 @@ for(let key in mass) {                      //переобразования с 
     console.log(key);
 };
 */
-
+/*
 let ans = prompt('',''),
     arr = [];
 
-arr = ans.split(',');
+arr = ans.split(',');                       //переобразования с split
 console.log(arr);
+*/
+/*
+let arr = ['aa','bb','cc'],
+    i = arr.join(', ');         //переобразования с join(этот метод берет значения и использует сложения, что есть внутри join-а будет вставляться между значениями)
+
+console.log(i);
+*/
+/*
+let arr = [1,19,4],
+    i = arr.sort(compareNum);   // переобразования с sort, сорт делает сортировку, если запустить без обратной ф-ий нам выдаст значения исходя порядка, sort сортирует схожестью со строковым форматом и для полноценных чисел мы используем ниже преведенную обратную ф-ю
+
+function compareNum(a,b) {          //callback function
+    return a-b;
+};
+console.log(arr);
+*/
+
+/*****************************************************************Обьектно ориентированое програпирования***********************/
+// Пример с __proto__
+/*
+let soldier = {
+    health: 400,
+    armor: 100
+};
+let John = {
+    health: 200
+};
+
+John.__proto__ = soldier;
+
+console.log(John);
+console.log(John.armor);
+*/
+
