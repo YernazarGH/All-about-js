@@ -756,27 +756,28 @@ let appData = {                     // основной обьект где хр
         };
     },
     choseIncome: function() {               // Функция по определения дополнительного дохода
-        let items = prompt('Что принесет дополнительный доход? (перечислите через запятую)' , '');
-
-        if( typeof(items) != 'string' && items == '' && typeof(items) == null ) {
-                console.log("Вы ввели некорректные данные или не ввели их вовсе")
-        }else{
-            appData.income = items.split(',');
-            appData.income.push(prompt('Может что-то еще?'));
-            appData.income.sort();
+        for(let i = 1; i < 2; i++) {
+            let items = prompt('Что принесет дополнительный доход? (перечислите через запятую)' , '');
+            
+            if( typeof(items) === 'string' && items != '' && typeof(items) != null) {
+                appData.income = items.split(',');
+                appData.income[i];
+            }else{
+                alert('Вы ввели не корректные данные на вопросе дополнительного дохода, просьба ввести как требует инструкция');
+                i--;
+            };
         };
+        appData.income.push(prompt('Может что-то еще?'));
+        appData.income.sort();
         appData.income.forEach( function(item, i) {
             console.log('Способы доп заработка: ' + '(' + (i+1) + ') ' + item);
-        });    
+        })
     }
 };
 
 for(let key in appData) {
-    console.log('Наша программа включает в себя данные: ' + key + '-' + appData[key])
+    console.log('Наша программа включает в себя данные: ' + key)
 };
 
-appData.choseIncome();
-
-console.log(appData);
 
 
