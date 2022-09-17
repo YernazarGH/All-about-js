@@ -693,6 +693,7 @@ console.log(John);
 console.log(John.armor);
 */
 /********************************************Практическое задание 4**********************************************************/
+/*
 let money,
     time;
 
@@ -778,6 +779,37 @@ let appData = {                     // основной обьект где хр
 for(let key in appData) {
     console.log('Наша программа включает в себя данные: ' + key)
 };
+*/
+/**********************************************Переобразования типов данных*****************************/
+// to string
+//1 String()
+//console.log(typeof(String(null)));
+//2 concatanation
+//console.log(typeof('https://vk.com/catolog/' + 5));
+// to number
+//1 Number()
+//console.log(typeof(Number('5')));
+//2 +"", +true etc.
+//console.log(typeof(5 + +'5'));
+//3 parseInt
+//console.log(typeof(parseInt('15px',10)));
+// to logical
+// 1 switch
+/*
+let switcher = null;
 
+if (switcher) {
+    console.log('Working...');
+};
 
+switcher = 1;
 
+if (switcher) {
+    console.log('Working...');
+};
+*/
+// 2 to boolen, Boolen(), !!()
+/*
+console.log(typeof(Boolean('15')));
+console.log(typeof(!!2));
+*/
