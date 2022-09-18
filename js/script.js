@@ -813,3 +813,52 @@ if (switcher) {
 console.log(typeof(Boolean('15')));
 console.log(typeof(!!2));
 */
+/*************************************************Частые вопросы в собеседования ********************************/
+// 1 profix and prefix
+/*
+let x = 5;
+alert( x++ ); //result 5 сперва он вывел 5 потом изменил инкрементом на 6 и возращает его
+// если теперь запустить алерт нам выдаст 6
+alert (x);
+
+// сложения примеры
+console.log([] + false - null + true);   //NaN, [] - равняеться строке 
+// string + boolen = string
+// string + null = string
+// string + number = string
+// string - null = NaN
+// NaN + boolen = NaN
+*/
+// присваение
+/*
+let y = 1;
+let x = y = 2; // справа на лево у=2, потом х=у
+
+alert(x);   // 2
+*/
+// ссылки в строке 
+/*
+alert('1'[0]);  // "1" потому что 1 значения в строке равен 1. ЕСЛИ МЫ ЧУТЬ ЧУТЬ ПЕРЕДЕЛАЕМ 
+alert('1'[1]);  // undefiend по скольку в строке 1 нет второга значения
+
+// сравнения примеры
+
+console.log(2 && 1 && null && 0 && undefined); //null первая false значения
+console.log(!!(a && b) == (a && b));  //  неравны первый булин второе сравнения 
+console.log( null || 2 && 3 || 4); // 3 по скольку || берет первое тру в своем сравнения
+console.log(0 || "" || 2 || undefined || true || false); // 2 первое тру во всем сравнений
+console.log('ёжик' > 'яблоко'); // в  unicode "ё" находиться после "я" true
+console.log('ежик' > 'яблоко') // false 
+console.log('Ежик' > 'яблоко') // false
+
+let a = [1,2,3],
+    b = [1,2,3];
+
+console.log(a == b); // false
+
+let x = [1,2,3],
+    y=x;
+
+console.log(x === y ) // true
+*/
+
