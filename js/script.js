@@ -862,3 +862,64 @@ let x = [1,2,3],
 console.log(x === y ) // true
 */
 
+/**************************************************************Обработчик собитий DOM****************************************************/
+let btn = document.querySelectorAll('#js'),
+    wrap = document.querySelector('.wrapper'),
+    link = document.querySelector('a');
+
+// обработчик с методом onclick 
+/*
+btn[0].onclick = function() {
+    alert('Click!');
+};
+*/
+// обработчик с методам addEventListener
+/*
+btn[0].addEventListener('click', function() {
+	alert('Click!');
+	alert('Click again!');
+});
+
+
+//analog
+btn[0].addEventListener('click', function() {
+	alert('Click!');
+});
+btn[0].addEventListener('click', function() {
+	alert('Click again!');
+});
+
+
+btn[0].addEventListener('mouseenter', function() {
+	console.log('Вы навели на кнопку');
+});
+*/
+// addEventListener с event
+/*
+btn[0].addEventListener('click', function(event) {
+	let target = event.target;
+	target.style.display = 'none';
+	alert('Click');
+});
+*/
+/*
+btn[0].addEventListener('click', function(event) {
+	console.log('Произошло событие ' + event.type + ' на элементе ' + event.target);
+});
+
+wrap.addEventListener('click', function(event) {
+	console.log('Произошло событие ' + event.type + ' на элементе ' + event.target);
+});
+
+link.addEventListener('click', function(e) {
+	e.preventDefault();
+	console.log('Just click!');
+});
+*/
+
+btn.forEach(function(item) {
+	item.addEventListener('mouseleave', function() {
+		console.log('Вышли');
+	});
+});
+
