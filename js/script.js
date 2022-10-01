@@ -863,18 +863,19 @@ console.log(x === y ) // true
 */
 
 /**************************************************************Обработчик собитий DOM****************************************************/
+/*
 let btn = document.querySelectorAll('#js'),
     wrap = document.querySelector('.wrapper'),
     link = document.querySelector('a');
 
 // обработчик с методом onclick 
-/*
+
 btn[0].onclick = function() {
     alert('Click!');
 };
-*/
+
 // обработчик с методам addEventListener
-/*
+
 btn[0].addEventListener('click', function() {
 	alert('Click!');
 	alert('Click again!');
@@ -893,16 +894,15 @@ btn[0].addEventListener('click', function() {
 btn[0].addEventListener('mouseenter', function() {
 	console.log('Вы навели на кнопку');
 });
-*/
+
 // addEventListener с event
-/*
+
 btn[0].addEventListener('click', function(event) {
 	let target = event.target;
 	target.style.display = 'none';
 	alert('Click');
 });
-*/
-/*
+
 btn[0].addEventListener('click', function(event) {
 	console.log('Произошло событие ' + event.type + ' на элементе ' + event.target);
 });
@@ -915,7 +915,6 @@ link.addEventListener('click', function(e) {
 	e.preventDefault();
 	console.log('Just click!');
 });
-*/
 
 btn.forEach(function(item) {
 	item.addEventListener('mouseleave', function() {
@@ -923,3 +922,65 @@ btn.forEach(function(item) {
 	});
 });
 
+*/
+
+/*************************************** ДОМ в мобильные устройства и регулярные выражение ***********************/
+// События с touchstart
+/*
+window.addEventListener('DOMContentLoaded', function () {
+    let box = document.querySelector('.box')
+    box.addEventListener('touchstart', function(e){
+        e.preventDefault();
+        console.log('box: touchstart');
+        console.log(e.touches); // Событие для получение количеств пальц коснувшися вне зависимости эл-а (массив)
+        console.log(e.changedTouches); // идентично с пред
+        console.log(e.targetTouches);   // регистрация пальцов которые взаимодействуют с эл-ом (массив)
+        console.log(target);    //выдаст блок по которому было нажатие
+        console.log(e.touches[0].target);   //идентично с пред
+    });
+});
+
+// События с touchmove
+
+window.addEventListener('DOMContentLoaded', function () {
+    let box = document.querySelector('.box')
+    box.addEventListener('touchmove', function(e){
+        e.preventDefault();
+        console.log('box: touchmove');
+        console.log(e.touches[0].pageX); // Событие для получение количеств пальц коснувшися вне зависимости эл-а и отслеживание передвижение по Оси Х (массив)
+    });
+
+});
+
+// События с touchend
+
+window.addEventListener('DOMContentLoaded', function () {
+    let box = document.querySelector('.box')
+    box.addEventListener('touchend', function(e){
+        e.preventDefault();
+        console.log('box: touchend');
+    });
+});
+// touchenter, touchleave, touchcancel
+
+// Регулярные выражения RegExp
+//let a = new RegExp('pattern', 'flag');
+
+// Регулярные выражения /'pattern'/'flag'
+
+let ans = /n/i, // i- flag который переводит на другой регистр, n - что мы будем искать заменять удалять и т.д.
+    reg = prompt('Name?', '');
+
+console.log(ans.search(reg)); //искать пер рег в пер анс
+console.log(ans.match(/n/g)); // ищет все буквы n  в пер ans, g - это глобальный поиск находит все элементы. а рег сам по умолчанию ищет первый
+console.log(ans.search(/n/m)); // ищет по многострочностью
+console.log(ans.replace(reg, 't')); // в пер анс найденный регом заменяя на буквы t
+console.log(reg.test(ans)); // проверяет есть ли в пер анс значения с пер рег если есть ответ тру, если нет ответ фалс
+console.log(ans.match(/\d/g)); //найдет все цифры которые есть в пер анс
+console.log(ans.match(/\D/g)); //найдет все не цифры которые есть в пер анс   
+console.log(ans.match(/\w/g)); //найдет все буквы которые есть в пер анс
+console.log(ans.match(/\W/g)); //найдет все не буквы которые есть в пер анс
+console.log(ans.match(/\s/g)); //найдет все пробелы которые есть в пер анс
+console.log(ans.match(/\S/g)); //найдет все не пробелы которые есть в пер анс
+console.log(ans.match(/\//g)); //найдет все слэшы которые есть в пер анс
+*/
